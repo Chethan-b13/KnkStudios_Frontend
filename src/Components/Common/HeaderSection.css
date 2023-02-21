@@ -1,0 +1,226 @@
+.header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    box-shadow: -3px 9px 18px 0px #505050;
+    overflow: hidden;
+}
+
+.header video{
+    position: inherit;
+    min-width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.soundIcon{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1.5rem;
+    background: none;
+    margin: 20px 20px 20px 60px;
+    border: none;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.soundIcon:hover{
+    scale: 1.3;
+}
+
+.SocialIcons{
+    position: absolute;
+    right: 40px;
+    bottom: 50vh;
+    top: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.SocialIcons a{
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    margin-bottom: 20px;
+    transition: all .2s ease-in-out;
+}
+.SocialIcons a:hover{
+    scale: 1.4;
+}
+
+.headerContent{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateX(50%) translateY(-50%);
+    right: 50%;
+    text-shadow: -1px 0px 3px;
+}
+
+.headerContent h1{
+    font-size: 4rem;
+    color: white;
+    word-spacing: 10px;
+    
+}
+
+.headerContent h1::after{
+    content:' ';
+    display:block;
+    width: 100%;
+    border:2px solid #ffffff;
+}
+
+.headerContent a{
+    color: white;
+    margin: 10px;
+    font-weight: 500;
+    padding: 15px;
+    border: 3px #F29727 solid;
+    transition: all .2s ease-in-out;
+}
+
+.headerContent a:hover{
+    scale: 1.1;
+    color: #F29727;
+    border: 3px #ffffff solid;
+}
+
+/* ############ NavBar ########## */
+
+.navbar{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+}
+
+.navbar img{
+    max-width: 100%;
+    max-height: 100%;
+    scale: 1.5;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.icons-right{
+    display: flex;
+    width: 15%;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadein 750ms;
+}
+
+.icons-right a{
+    color: white;
+    font-size: 17px;
+    margin: 15px;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.icons-right a:hover{
+    scale: 1.1;
+    color: #F29727;
+}
+
+#menuBarLines{
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    margin-right: 35px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+#menuBarLines:hover{
+    scale: 1.1;
+}
+
+#menuBarX{
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    transition: all .2s ease-in-out;
+} 
+
+#menuBarX:hover{
+    scale: 1.1;
+}
+
+.hidden{
+    display: none;
+}
+
+.hiddenMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 35px;
+    width: 30%;
+    height: 50px;
+    border-radius: 20px 0 0 20px;
+    background-color: transparent;
+    animation: fadein 550ms;
+    transition: all .3s ease-in-out;
+}
+
+.hideMenu{
+    display: none;
+    margin-right: 35px;
+    width: 45%;
+    height: 50px;
+    border-radius: 20px 0 0 20px;
+    background-color: transparent;
+}
+
+.hiddenMenu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.hiddenMenu li{
+    margin: 15px;
+    transition: all .2s ease-in-out;
+}
+.hiddenMenu li:hover{
+    scale: 1.07;
+}
+
+.hiddenMenu a{
+    font-size: 17px;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.hiddenMenu a:hover{
+    color: #F29727;
+}
+
+
+
+/* ########### Animations ################### */
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

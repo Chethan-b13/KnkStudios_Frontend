@@ -1,0 +1,73 @@
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.OnVisibleAnimate{
+    &-fast{
+        animation: fadein 1.5s;
+    }
+    &-slow{
+        animation: fadein 3s;
+    }   
+}
+
+
+
+.contentContainer h1{
+    font-size: 4rem;
+    color: #071526;
+}
+
+.contentContainer h1::after{
+    content: '';
+    display: block;
+    width: 100%;
+    border:1px solid #F29727;;
+}
+
+.cardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 20px;
+    height: auto;
+    text-shadow: -3px 4px 19px black;
+}
+
+.card{
+    width: 10rem;
+    box-shadow: -6px 7px 20px -5px black;
+    height: 10rem;
+    flex-wrap: wrap;
+    border-radius: 2rem;
+    margin: 30px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover{
+    scale: 1.1;
+}
+
+
+/* ##### Animation ######  */
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
