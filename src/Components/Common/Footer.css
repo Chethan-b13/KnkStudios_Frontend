@@ -2,32 +2,125 @@
     width: 100%;
     height: auto;
     background-color: #071526;
+    margin-top: 4rem;
 }
 
 .cwhite{
     color: white;
 }
 
-.Col4{
+.Colums4{
     display: flex;
-    justify-content:center;
-    padding: 20px;
+    gap: 4%;
+    padding: 2rem 5rem;
 }
 
 .flex-col{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flex-col p{
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+.flex-col p svg{
+    margin-right: 10px;
+    color: #e67e00;
+    font-size: 25px;
+}
+
+.flex-col h3{
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 0.5px;
 }
 
 .col1{
-    width: 20%;
+    width: 30%;
+}
+
+.col1 img{
+    width: 10rem;
 }
 
 .col2{
-    width: 20%;
+    width: 14%;
+    justify-content: initial;
+    padding: 2rem 0rem;
+}
+
+.col2 ul{
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
 }
 
 .col2 ul li a{
     color: white;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+}
+.col2 ul li a:hover{
+    color: #ff9310;
+}
+
+.col4{
+    justify-content: initial;
+    width: 30%;
+    padding: 2rem 0;
+}
+
+.col4 input{
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+.col4 input:focus{
+    outline: none;
+    scale: 1.03;
+}
+
+.col4 button{
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    background: #e67e00;
+    transition: all .2s ease-in-out;
+}
+
+.col4 button:hover{
+    color: black;
+}
+
+.copyRights{
+    width: 100%;
+    height: 4rem;
+    background-color: #0b141f;
+    display: flex;
+    padding: 0 4rem;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyRights h4{
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.ownerLinks{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    
 }

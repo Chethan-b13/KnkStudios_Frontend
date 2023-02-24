@@ -1,7 +1,9 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import image1 from "../../Assets/hiphop1.jpg";
+import Counter from "../Common/Counter";
 import Card from "./Card";
+
 
 import "./Home.scss";
 import OurStory from "./OurStory";
@@ -27,7 +29,7 @@ const Content = () => {
           <Card dstyle="FreeStyle" img={image1} />
         </div>
       </div>
-      
+      <Counter />
     </div>
   );
 };
