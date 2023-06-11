@@ -6,10 +6,13 @@ import { Navbar } from './Navbar'
 import {RxSpeakerLoud,RxSpeakerOff} from 'react-icons/rx'
 import { SlSocialInstagram,SlSocialFacebook } from "react-icons/sl";
 import { TiSocialYoutube } from "react-icons/ti";
+import Apply from './Application/Apply'
 
 export const HeaderSection = () => {
 
   const [muted, setmuted] = useState(true)
+  const [ShowModal, setShowModal] = useState(false)
+
   return (
     <div className='header'>
         <video autoPlay muted={muted} loop>
@@ -19,8 +22,12 @@ export const HeaderSection = () => {
 
         <div className="headerContent">
           <h1>BE A PART OF US</h1>
-          <Link>Apply Now</Link>
+          <button onClick={()=>{setShowModal(!ShowModal) }}>Apply Now</button>
         </div>
+
+        {
+          ShowModal && <Apply ShowModal={ShowModal} setShowModal={setShowModal}/>
+        }
 
         <div className="SocialIcons">
            <Link to={'https://www.instagram.com/ck6_officials/'} target="_blank"><span><SlSocialInstagram/></span></Link>

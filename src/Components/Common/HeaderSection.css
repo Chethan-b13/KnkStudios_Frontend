@@ -79,16 +79,17 @@
     border:2px solid #ffffff;
 }
 
-.headerContent a{
+.headerContent button{
     color: white;
     margin: 10px;
     font-weight: 500;
     padding: 15px;
     border: 3px #F29727 solid;
+    background-color: transparent;
     transition: all .2s ease-in-out;
 }
 
-.headerContent a:hover{
+.headerContent button:hover{
     scale: 1.1;
     color: #F29727;
     border: 3px #ffffff solid;
