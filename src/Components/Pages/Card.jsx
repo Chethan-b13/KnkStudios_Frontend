@@ -6,6 +6,7 @@ const Card = (props) => {
   const stying = {backgroundImage:`url(${props.img})`}
   console.log(stying)
   const {ref:myref , inView:elementVisible } = useInView()
+
   return (
     <div ref={myref} style={ stying } 
     className={`card ${elementVisible && 'OnVisibleAnimate-slow' }`}>

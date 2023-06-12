@@ -107,6 +107,23 @@
     margin-top: 2px;
 }
 
+.ytCardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 20px;
+    height: auto;
+    text-shadow: -3px 4px 19px black;
+}
+
+.ytCardContainer iframe{
+    width: 25rem;
+    height: 15rem;
+    border-radius: 1rem;
+}
+
 /* ##### Animation ######  */
 @keyframes fadein {
     0%{

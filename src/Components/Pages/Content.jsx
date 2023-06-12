@@ -7,8 +7,11 @@ import Card from "./Card";
 
 import "./Home.scss";
 import OurStory from "./OurStory";
+import YtCard from "./YtCard";
+import YtReelsCards from "./YtReelsCards";
 
 const Content = () => {
+  
   const { ref: myref, inView: elementVisible } = useInView();
 
   return (
@@ -30,6 +33,8 @@ const Content = () => {
         </div>
       </div>
       <Counter />
+      <YtCard />
+      <YtReelsCards />
     </div>
   );
 };
