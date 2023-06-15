@@ -34,7 +34,6 @@ const Content = () => {
       </div>
       <Counter />
       <YtCard />
-      <YtReelsCards />
     </div>
   );
 };

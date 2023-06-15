@@ -23,7 +23,7 @@ const Apply = (props) => {
         
         </div>
         <div className="form_header">
-          <h1>Form</h1>
+          <h1>Application Form</h1>
         </div>
         <div className="form_body">
           {<RenderPage />}
