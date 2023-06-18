@@ -1,31 +1,40 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import './application.scss'
+import { ApplicationFormContext } from './Apply'
 
-const BasicInfo = () => {
-  const inputFields = [
-    {type:'text',name:'Full Name',id:'name'},
-    {type:'email',name:'Email ID',id:'name'},
-    {type:'tel',name:'Full Name',id:'name'},
-    {type:'number',name:'Full Name',id:'name'},
+const BasicInfo = (props) => {
+  const formFields = [
+    { id: 'full_name', type: 'text', name: 'Full Name' },
+    { id: 'email', type: 'text', name: 'Email Address' },
+    { id: 'phone', type: 'tel', name: 'Phone Number' }
   ]
   return (
-    <div className='applicationForm'>
-        <Inputs id />
-        <input type="text" placeholder='Your Name' />
-        <input type="email" placeholder='email@gmail.com' />
-        <input type="tel" placeholder='+91 980****909' />
-        <input type="number" placeholder='Your Age' />
-        <input type="date" id="dob" name="dob"  />
-        <textarea id="address" name="address"  />
+    <div className='applicationForm' key={1}>
+      {
+        formFields.map((field,i)=>{
+          return <FormInputs key={i} id={field.id} type={field.type} name={field.name} />
+        })
+      }
+      <div className="applicationForm__field" key={'address'}>
+        <label htmlFor="address">Address</label>
+        <textarea key={'address'} id="address"></textarea>
+      </div>
+      
+        
     </div>
   )
 }
 
-const Inputs = (props)=>{
+export const FormInputs = (props)=>{
+  const {formData,setFormData} = useContext(ApplicationFormContext);
+  const handleformData = (fieldName, value)=>{
+    setFormData({...formData,[fieldName]:value});
+  }
   return(
-    <>
-    <label htmlFor={props.id}>{props.name}</label>
-    <input type={props.type} id={props.id} />
-    </>
+    <div className="applicationForm__field" key={props.id}>
+      <label htmlFor={props.id}>{props.name}</label>
+      <input name={props.id} onChange={(e)=>handleformData(props.id,e.target.value)} type={props.type} id={props.id} value={formData[props.id]} />
+    </div>
   );
 }
 

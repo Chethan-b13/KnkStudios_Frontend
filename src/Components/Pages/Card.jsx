@@ -4,7 +4,6 @@ import './Home.scss'
 
 const Card = (props) => {
   const stying = {backgroundImage:`url(${props.img})`}
-  console.log(stying)
   const {ref:myref , inView:elementVisible } = useInView()
 
   return (

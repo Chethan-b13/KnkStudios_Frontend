@@ -14,8 +14,8 @@ const YtCard = () => {
     <div className="contentContainer">
         <h1 className="contentH1">Our Top Choreography </h1>
         <div className='ytCardContainer'>
-            {ytUrls.map((url)=>{
-            return <iframe className='card ytcard' width="25rem" height="15rem" src={url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            {ytUrls.map((url,i)=>{
+            return <iframe key={i} className='card ytcard' width="25rem" height="15rem" src={url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
             })}
           
         </div>
