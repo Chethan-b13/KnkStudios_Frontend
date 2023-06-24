@@ -49,7 +49,7 @@ const Apply = (props) => {
         <div className="form_body">
         <ApplicationFormContext.Provider value={{formData,setFormData}}>
           {<RenderPage />}
-          </ApplicationFormContext.Provider>
+        </ApplicationFormContext.Provider>
         </div>
         <div className="form_footer">
           <button disabled={page === 0 } onClick={()=>{setpage(page-1)}}>{'< Prev'}</button>
