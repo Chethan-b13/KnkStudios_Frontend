@@ -20,7 +20,7 @@ export const Navbar = () => {
             <ul>
                 <li><Link to={'/'}>Home</Link></li>
                 <li><Link to={'/'}>About us</Link></li>
-                <li><Link to={'/'}>Login</Link></li>
+                <li><Link to={'/login'}>Login</Link></li>
                 <li><Link to={'/'}>Contact</Link></li>
             </ul>
             <button id='menuBarX' onClick={()=>{setmenuVisible(false)}}><RiCloseCircleLine /></button>

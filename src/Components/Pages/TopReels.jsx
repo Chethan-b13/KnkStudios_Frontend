@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Home.scss'
 import { LazyLoadComponent } from 'react-lazy-load-image-component'
 
 const TopReels = () => {
-    const [play, setplay] = useState(false)
     const reel_urls = [
         "https://firebasestorage.googleapis.com/v0/b/kalanidhi-kala-studios.appspot.com/o/test5.mp4?alt=media&token=fa54a774-65ec-4c4d-9ab4-d76901f2e178",
         "https://firebasestorage.googleapis.com/v0/b/kalanidhi-kala-studios.appspot.com/o/Test123.mp4?alt=media&token=22d28c62-5f18-4cef-9456-bedf8f1be7d3",
@@ -27,12 +26,13 @@ const TopReels = () => {
         }
       };
     const handlePlay = (e)=>{
-        setplay(!play);
-        if(play){
-            e.target.play();
-        }else if(play===false){
-            e.target.pause()
-        }
+        const video = e.target;
+        if (video.paused) {
+            video.play();
+          }
+        else if (!video.paused) {
+            video.pause();
+          }
     }
     return (
     <div className="contentContainer">
