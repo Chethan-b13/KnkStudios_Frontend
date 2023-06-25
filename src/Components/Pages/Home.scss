@@ -65,7 +65,7 @@
 .StoryConTainer{
     display: flex;
     justify-content: center;
-    width: 100%;
+    max-width: 100%;
     margin-top: 4rem;
 }
 
@@ -119,7 +119,8 @@
 }
 
 .ytCardContainer iframe{
-    width: 25rem;
+    display: block;
+    min-width: 25rem;
     height: 15rem;
     border-radius: 1rem;
 }
@@ -131,5 +132,25 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+.reelContainer{
+    padding: 2rem 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    video{
+        padding: 5px;
+        transition: all .2s ease-in-out;
+    }
+    video:hover{
+        scale: 1.02;
+    }
+    video:focus{
+        border: 1px solid orange;
     }
 }

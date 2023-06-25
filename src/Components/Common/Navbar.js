@@ -10,7 +10,7 @@ export const Navbar = () => {
     <div className='navbar'>
         <img src={logo} alt="" />
         <div className={menuVisible ? 'icons-right hidden' : "icons-right"}>
-            <Link to={'/'}>SignUp</Link>
+            <Link to={'/signup'}>SignUp</Link>
             <button id='menuBarLines' onClick={()=>{setmenuVisible(!menuVisible)}}><RiMenu4Line /></button>
         </div>
         

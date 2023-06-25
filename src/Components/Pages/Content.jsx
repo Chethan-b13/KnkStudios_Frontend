@@ -8,7 +8,7 @@ import Card from "./Card";
 import "./Home.scss";
 import OurStory from "./OurStory";
 import YtCard from "./YtCard";
-import YtReelsCards from "./YtReelsCards";
+import TopReels from "./TopReels";
 
 const Content = () => {
   
@@ -34,6 +34,7 @@ const Content = () => {
       </div>
       <Counter />
       <YtCard />
+      <TopReels />
     </div>
   );
 };

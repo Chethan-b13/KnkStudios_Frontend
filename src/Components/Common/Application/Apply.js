@@ -9,7 +9,7 @@ export const ApplicationFormContext = createContext();
 const Apply = (props) => {
   const [page, setpage] = useState(0);
   const [formData, setFormData] = useState({
-    full_name: 'Chethan',
+    full_name: '',
     email: '',
     phone: '',
     dob: '',
@@ -53,7 +53,7 @@ const Apply = (props) => {
         </div>
         <div className="form_footer">
           <button disabled={page === 0 } onClick={()=>{setpage(page-1)}}>{'< Prev'}</button>
-          <button onClick={()=>{if(page<2){setpage(page+1)}}}>{page===2 ?'Submit':'Next >'}</button>
+          <button style={{"background":page===2&&'green'}} onClick={()=>{if(page<2){setpage(page+1)}}}>{page===2 ?'Submit':'Next >'}</button>
         </div>
     </div>
     <div onClick={()=>{props.setShowModal(false)}} id="overlay"></div>

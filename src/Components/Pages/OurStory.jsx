@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import video from '../../Assets/video6.mp4'
 import {RxSpeakerLoud,RxSpeakerOff} from 'react-icons/rx'
 import './Home.scss'
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const OurStory = () => {
     const [muted, setmuted] = useState(true)
@@ -11,9 +12,11 @@ const OurStory = () => {
   return (
     <div ref={myref} className={`StoryConTainer ${elementVisible && 'OnVisibleAnimate-fast' }`}>
       <div id="storyVideoConatiner">
-        <video autoPlay muted={muted} loop>
-        <source src={video} type="video/mp4" />
-      </video>
+        <LazyLoadComponent>
+          <video autoPlay muted={muted} loop>
+            <source src={video} type="video/mp4" />
+          </video>
+        </LazyLoadComponent>
       <button onClick={()=>{setmuted(!muted)}} >{muted?<RxSpeakerOff/>:<RxSpeakerLoud/>}</button>
       </div>
       <div className="TextContent">

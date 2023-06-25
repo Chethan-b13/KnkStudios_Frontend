@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { Home } from './Components/Pages/Home';
-import Dummy from './Components/Pages/Dummy';
+import SignUpPage from './Components/Pages/AccountSection/SignUpPage';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' exact element={<Home />}></Route>
-            <Route path='/meow' exact element={<Dummy />}></Route>
+            <Route path='/signup' exact element={<SignUpPage />}></Route>
           </Routes>
         </Router>
     </div>
