@@ -5,6 +5,7 @@ import { Navbar } from '../../Common/Navbar'
 import {Link} from 'react-router-dom'
 import {RiLockPasswordFill} from 'react-icons/ri'
 import {FaUserAlt,FaEyeSlash,FaEye} from 'react-icons/fa'
+import {AiFillGoogleCircle} from 'react-icons/ai'
 
 const Login = () => {
 
@@ -18,6 +19,7 @@ const Login = () => {
         <div className="left">
           <img src={dance} alt="" />
           <Link to={'/signup'}>Create an Account</Link>
+          <button id='google'>Google <AiFillGoogleCircle /></button>
         </div>
         <div className="right">
           <h1>Login</h1>
