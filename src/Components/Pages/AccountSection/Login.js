@@ -21,7 +21,7 @@ const Login = () => {
           <Link to={'/signup'}>Create an Account</Link>
           <button id='google'>Google <AiFillGoogleCircle /></button>
         </div>
-        <div className="right">
+        <form className="right">
           <h1>Login</h1>
           <div className="inp">
             <FaUserAlt />
@@ -33,7 +33,7 @@ const Login = () => {
             {showPassword1?<FaEye onClick={()=>setshowPassword1(!showPassword1)} /> : <FaEyeSlash onClick={()=>setshowPassword1(!showPassword1)} />}
           </div>
           <button>Login</button>
-        </div>
+        </form>
       </div>
     </div>
     </>

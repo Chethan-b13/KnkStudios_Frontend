@@ -122,7 +122,8 @@
     display: flex;
     width: 15%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     animation: fadein 750ms;
 }
 
@@ -172,7 +173,8 @@
 
 .hiddenMenu{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     align-items: center;
     margin-right: 35px;
     width: 30%;

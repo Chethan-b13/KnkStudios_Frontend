@@ -6,15 +6,49 @@ import {Link} from 'react-router-dom'
 import {RiLockPasswordFill} from 'react-icons/ri'
 import {FaUserAlt,FaEyeSlash,FaEye} from 'react-icons/fa'
 import {AiFillGoogleCircle} from 'react-icons/ai'
+import {MdEmail} from 'react-icons/md'
+import {GiConfirmed} from 'react-icons/gi'
+import {useForm} from 'react-hook-form'
+import {yupResolver} from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import { postRequest } from '../../../axios'
+import Loader from '../../Common/Loader'
+
 
 const SignUpPage = () => {
 
   const [showPassword1, setshowPassword1] = useState(false);
   const [showPassword2, setshowPassword2] = useState(false);
+  const [customError, setcustomError] = useState(null);
+  const [isLoading, setisLoading] = useState(false)
 
+  const signupSchema = yup.object().shape({
+    name: yup.string("Invalid Name!").required("Full Name is Required!"),
+    email: yup.string("Invalid Email Id!").email("Invalid Email Id!").required("Email is Required!"),
+    password: yup.string().min(6,"Password should be minimum 6 Characters").max(20).required("Create a password"),
+    password2: yup.string().oneOf([yup.ref('password'),null]).required("Confirm your password!")
+  });
+
+  const {register,handleSubmit,formState:{errors}} = useForm({
+    resolver: yupResolver(signupSchema)
+  });
+
+  const onSubmit = async (data)=>{
+    try {
+      setisLoading(true)
+      console.log(data);
+      await postRequest('accounts/signup',data)
+      window.location = '/login'
+    } catch (err) {
+      setcustomError(err.response.data.Error);
+    }finally{
+      setisLoading(false)
+    }
+    
+  }
   return (
     <>
-    <Navbar />
+    <Navbar swap={true} />
     <div className='CardContainer'>
       <div className="center_card">
         <div className="left">
@@ -25,26 +59,33 @@ const SignUpPage = () => {
           </div>
           <button id='google'>Google <AiFillGoogleCircle /></button>
         </div>
-        <div className="right">
+        <form className="right" onSubmit={handleSubmit(onSubmit)}>
           <h1>Sign up</h1>
-          <div className="inp">
+          {/* { Object.values(errors)[0] && <p>{Object.values(errors)[0]?.message}</p>} */}
+          { customError && <p>{customError}</p>}
+          <div className={`inp ${errors?.name && 'error'}`} >
             <FaUserAlt />
-            <input type='text' id="email" placeholder="Your Email"/>
+            <input type='text' id="name" placeholder="Full Name" {...register("name")}/>
           </div>
-          <div className="inp">
+          <div className={`inp ${errors?.email && 'error'}`}>
+            <MdEmail />
+            <input type='text' id="email" placeholder="Your Email" {...register("email")}/>
+          </div>
+          <div className={`inp ${errors?.password && 'error'}`}>
             <RiLockPasswordFill />
-            <input type={showPassword1 ? 'text' :'password'} id="password" placeholder="Password"/>
+            <input type={showPassword1 ? 'text' :'password'} id="password" placeholder="Password" {...register("password")}/>
             {showPassword1?<FaEye onClick={()=>setshowPassword1(!showPassword1)} /> : <FaEyeSlash onClick={()=>setshowPassword1(!showPassword1)} />}
           </div>
-          <div className="inp">
-            <RiLockPasswordFill />
-            <input type={showPassword2 ? 'text' :'password'} id="confirm_password" placeholder="Confirm Password"/>
+          <div className={`inp ${errors?.password2 && 'error'}`}>
+            <GiConfirmed />
+            <input type={showPassword2 ? 'text' :'password'} id="confirm_password" placeholder="Confirm Password" {...register("password2")}/>
             {showPassword2?<FaEye onClick={()=>setshowPassword2(!showPassword2)} /> : <FaEyeSlash onClick={()=>setshowPassword2(!showPassword2)} />}
           </div>
-          <button>SIGN UP</button>
-        </div>
+          <button type='submit'>SIGN UP</button>
+        </form>
       </div>
     </div>
+    {isLoading && <Loader /> }
     </>
   )
 }
