@@ -40,11 +40,11 @@ const TopReels = () => {
         
         <div className="reelContainer">
             {
-                reel_urls.map((url)=>{
-                    return <LazyLoadComponent>
-                        <video key={url} width="320" height="560" onClick={handlePlay} onDoubleClick={openFullScreen}>
-                                <source src={url} type="video/mp4" />
-                            </video>
+                reel_urls.map((url,i)=>{
+                    return <LazyLoadComponent key={`key__${i}_${url}`}>
+                        <video  width="320" height="560" onClick={handlePlay} onDoubleClick={openFullScreen}>
+                            <source src={url} type="video/mp4" />
+                        </video>
                     </LazyLoadComponent>
                 })
             }

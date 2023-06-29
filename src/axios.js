@@ -20,20 +20,20 @@ const headers = {
     if (token) {
         headers.Authorization = `Bearer ${token}`;
     }
-    return axiosClient.post(`/${URL}`, payload).then(response => response);
+    return axiosClient.post(`/${URL}`, payload,{headers}).then(response => response);
   }
   
   export function patchRequest(URL, payload,token=null) {
     if (token) {
         headers.Authorization = `Bearer ${token}`;
     }
-    return axiosClient.patch(`/${URL}`, payload).then(response => response);
+    return axiosClient.patch(`/${URL}`, payload,{headers}).then(response => response);
   }
   
   export function deleteRequest(URL,token=null) {
     if (token) {
         headers.Authorization = `Bearer ${token}`;
     }
-    return axiosClient.delete(`/${URL}`).then(response => response);
+    return axiosClient.delete(`/${URL}`,{headers}).then(response => response);
 
   }

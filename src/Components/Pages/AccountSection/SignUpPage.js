@@ -13,14 +13,16 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { postRequest } from '../../../axios'
 import Loader from '../../Common/Loader'
+import { useNavigate } from "react-router-dom";
 
 
 const SignUpPage = () => {
-
+  let navigate = useNavigate();
   const [showPassword1, setshowPassword1] = useState(false);
   const [showPassword2, setshowPassword2] = useState(false);
   const [customError, setcustomError] = useState(null);
   const [isLoading, setisLoading] = useState(false)
+
 
   const signupSchema = yup.object().shape({
     name: yup.string("Invalid Name!").required("Full Name is Required!"),
@@ -38,7 +40,7 @@ const SignUpPage = () => {
       setisLoading(true)
       console.log(data);
       await postRequest('accounts/signup',data)
-      window.location = '/login'
+      return navigate("/login");
     } catch (err) {
       setcustomError(err.response.data.Error);
     }finally{
