@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import { Home } from './Components/Pages/Home';
 import SignUpPage from './Components/Pages/AccountSection/SignUpPage';
 import Login from './Components/Pages/AccountSection/Login';
+import Profile from './Components/Pages/Profile/Profile';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
             <Route path='/' exact element={<Home />}></Route>
             <Route path='/signup' exact element={<SignUpPage />}></Route>
             <Route path='/login' exact element={<Login />}></Route>
+            <Route path='/profile' exact element={<Profile />}></Route>
+            <Route path='*' exact element={<h1>404 Not Found</h1>}></Route>
           </Routes>
         </Router>
     </div>

@@ -14,9 +14,7 @@ export const Home = () => {
   const fetchUser = async ()=>{
     setisloading(true)
     try {
-      if(auth.isAuthenticated){
         await dispatch(getUserDetails(auth.token));
-      }
     } catch (error) {
       throw error
     }finally{
@@ -25,8 +23,10 @@ export const Home = () => {
   }
 
   useEffect(() => {
+    if(auth.isAuthenticated){
+      fetchUser();
+    }
     
-    fetchUser();
 
     return ()=> {}
   },[dispatch] )

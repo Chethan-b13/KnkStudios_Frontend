@@ -1,0 +1,66 @@
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 50vh;
+
+    .Container{
+
+        .imageContainer{
+            width: 40vh;
+            height: 40vh;
+            border-radius: 50%;
+            background: rgb(255, 234, 2);
+    
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+    }
+
+    .profileInfo{
+
+        color: #0a0a2a;
+
+        h1{
+            font-family: 'Great Vibes', cursive;
+            font-size: 8rem;
+            font-weight: 100;
+        }
+        
+        .followers_container{
+
+            display: flex;
+            align-items: center;
+
+            .followers{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 25px;
+                    
+                    h1{
+                        font-size: 2rem;
+                        font-weight: 500;
+                    }
+
+                    p{
+                        color: #ff8c00;
+                    }
+                }
+
+            div:not(:last-child){
+                border-right: 1px solid rgb(189, 189, 189);
+            }
+        }
+
+    }
+
+}
+

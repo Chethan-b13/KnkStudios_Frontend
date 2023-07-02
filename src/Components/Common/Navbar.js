@@ -1,21 +1,26 @@
 import React, { useState} from 'react'
 import './HeaderSection.css'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import logo from '../../Assets/logo.png'
 import {RiMenu4Line,RiCloseCircleLine} from 'react-icons/ri'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../ReduxStores/AuthSlice';
+import { useLocation } from 'react-router-dom'
 
 export const Navbar = (props) => {
     const [menuVisible,setmenuVisible] = useState(false);
+    const dispatch = useDispatch()
+    const location = useLocation();
     const user = useSelector((state)=>state.auth);
+
     console.log(user);
     return (
-    <div className='navbar'>
-        <img src={logo} alt="" />
+    <div className={props.background ? 'navbar_background' : 'navbar'}>
+        <img className='navbar_img' src={logo} alt="kalanidhi kala studios logo" />
         <div className={menuVisible ? 'icons-right hidden' : "icons-right"}>
-            { user.isAuthenticated ?
-            <Link to={'/'}>{user.userDetails.name}-{user.userDetails.team}</Link>
-            : props.swap ? <Link to={'/login'}>Login</Link> : <Link to={'/signup'}>SignUp</Link>
+            { user.isAuthenticated ? location.pathname==='/profile'? <Link to={'/'}>Home</Link>
+            : <Link to={'/profile'}>Profile</Link>
+            : location.pathname==='/' ? <Link to={'/login'}>Login</Link>:<Link to={'/'}>Home</Link>
             }
             <button id='menuBarLines' onClick={()=>{setmenuVisible(!menuVisible)}}><RiMenu4Line /></button>
         </div>
@@ -27,7 +32,7 @@ export const Navbar = (props) => {
                 <li><Link to={'/'}>Home</Link></li>
                 <li><Link to={'/'}>About us</Link></li>
                 {
-                user.isAuthenticated ? <li><Link to={'/signup'}>Logout</Link></li>
+                user.isAuthenticated ? <li onClick={dispatch(logout())}><a href='/'>Logout</a></li>
                 : props.swap? <li><Link to={'/signup'}>Signup</Link></li> :<li><Link to={'/login'}>Login</Link></li>
                 }
                 {
