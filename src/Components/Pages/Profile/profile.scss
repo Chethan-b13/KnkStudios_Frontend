@@ -25,7 +25,7 @@
 
     .profileInfo{
 
-        color: #0a0a2a;
+        color: #071526;
 
         h1{
             font-family: 'Great Vibes', cursive;
@@ -62,5 +62,47 @@
 
     }
 
+}
+
+.achievement{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh 65vh;
+    box-shadow: -10px 9px 11px 0px #cfcdcd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+
+    img{
+        width: 9vh;
+        position: absolute;
+        left: -2.1rem;
+    }
+
+    .columns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 0vh 5vh;
+
+        h1{
+            font-size: 3rem;
+            font-weight: 400;
+            color: #878787;
+        }
+
+        h4{
+            font-weight: 400;
+            color: #878787;
+        }
+
+    }
+
+    .border-left{
+        border-left: 1px solid rgb(189, 189, 189);
+    }
 }
 
