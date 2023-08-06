@@ -14,7 +14,7 @@ const Card = (props) => {
     <div ref={myref} style={ stying } 
     className={`card ${elementVisible && 'OnVisibleAnimate-slow' }`}>
         <h3>{props.dstyle}</h3>
-        <p>meow meow</p>
+        <p>meow style</p>
     </div>
   )
 }
