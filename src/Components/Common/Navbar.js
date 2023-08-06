@@ -33,7 +33,7 @@ export const Navbar = (props) => {
                 <li><Link to={'/'}>About us</Link></li>
                 {
                 user.isAuthenticated ? <li onClick={dispatch(logout())}><a href='/'>Logout</a></li>
-                : props.swap? <li><Link to={'/signup'}>Signup</Link></li> :<li><Link to={'/login'}>Login</Link></li>
+                : location.pathname==='/login'? <li><Link to={'/signup'}>Signup</Link></li> :<li><Link to={'/login'}>Login</Link></li>
                 }
                 {
                     user.userDetails.is_superuser && <li><Link to={'/'}>Admin</Link></li>

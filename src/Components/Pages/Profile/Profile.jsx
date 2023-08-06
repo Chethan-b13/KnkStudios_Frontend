@@ -5,6 +5,9 @@ import goal from '../../../Assets/goal.png'
 import ProfileFollowersCounter from './FollowersCounter'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Card from '../Card'
+import image1 from "../../../Assets/hiphop1.jpg";
+import TopReels from '../TopReels'
 
 const Profile = () => {
     
@@ -53,6 +56,13 @@ const Profile = () => {
                 <h4>choreography</h4>
             </div>
         </div>
+        <div className="danceStyle">
+            <Card dstyle="BBowing" img={image1} width="9rem" height="7rem" />
+            <Card dstyle="Free Style" img={image1} width="9rem" height="7rem"/>
+            <Card dstyle="Romance" img={image1} width="9rem" height="7rem"/>
+            <Card dstyle="Ricker" img={image1} width="9rem" height="7rem" />
+        </div>
+        <TopReels />
         </>
     )
 }

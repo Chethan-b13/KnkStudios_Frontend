@@ -3,7 +3,11 @@ import {useInView} from 'react-intersection-observer'
 import './Home.scss'
 
 const Card = (props) => {
-  const stying = {backgroundImage:`url(${props.img})`}
+  const stying = {
+    backgroundImage:`url(${props.img})`,
+    height: props.height ? props.height : '10rem',
+    width: props.width ? props.width : '10rem'
+  }
   const {ref:myref , inView:elementVisible } = useInView()
 
   return (
