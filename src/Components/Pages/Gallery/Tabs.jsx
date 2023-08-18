@@ -95,7 +95,11 @@ const Tabs = () => {
                                 {
                                     videos.map((url,idx)=>{
                                         return(
-                                            <video key={idx} autoPlay muted>
+                                            <video key={idx} 
+                                                onMouseOver={event => event.target.play()}
+                                                onMouseOut={event => event.target.pause()}
+                                                muted
+                                            >
                                                 <source src={url} type="video/mp4" />
                                             </video>
                                         )

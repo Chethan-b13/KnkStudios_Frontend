@@ -1,6 +1,10 @@
+$small: 300px;
+$medium: 800px;
+
 .galleryContainer{
     // margin: 2rem 5rem;
     background: linear-gradient(to top, #1f3954, #071526);
+    min-height: 100vh;
 }
 
 .tabsContainer{
@@ -14,6 +18,8 @@
         align-items: center;
         width: fit-content;
         background: #f4f4f4;
+        border-radius: 10px;
+        overflow: hidden;
 
         h1{
             font-size: 2.5vh;
@@ -24,6 +30,9 @@
             transition: all .2s ease-in-out;
             cursor: pointer;
 
+            @media screen and (max-width: $medium) {
+                font-size: 1.5vh;
+            }
             
         }:hover{
             background-color: white;
@@ -53,10 +62,19 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 0 1rem 2rem 1rem;
+
+    @media screen and (max-width: $medium){
+        gap: 8px;
+    }
 
     .column{  
         flex: 25%;
         max-width: 18%;
+
+        @media screen and (max-width: $medium){
+            max-width: 50%;
+        }
 
         img,video {
             margin-top: 20px;
@@ -64,6 +82,10 @@
             width: 100%;
             border-radius: 10px;
             box-shadow: 7px 9px 9px 0px #050e1a;
+
+            @media screen and (max-width: $medium){
+                margin-top: 8px;
+            }
           }
 
         

@@ -31,6 +31,7 @@ export const Navbar = (props) => {
             <ul>
                 <li><Link to={'/'}>Home</Link></li>
                 <li><Link to={'/'}>About us</Link></li>
+                <li><Link to={'/gallery'}>Gallery</Link></li>
                 {
                 user.isAuthenticated ? <li onClick={dispatch(logout())}><a href='/'>Logout</a></li>
                 : location.pathname==='/login'? <li><Link to={'/signup'}>Signup</Link></li> :<li><Link to={'/login'}>Login</Link></li>
