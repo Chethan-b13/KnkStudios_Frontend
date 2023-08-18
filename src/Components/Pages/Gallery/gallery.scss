@@ -1,5 +1,6 @@
 .galleryContainer{
-    margin: 2rem 5rem;
+    // margin: 2rem 5rem;
+    background: linear-gradient(to top, #1f3954, #071526);
 }
 
 .tabsContainer{
@@ -51,17 +52,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 20px;
 
     .column{  
         flex: 25%;
         max-width: 18%;
 
         img,video {
-            margin-top: 8px;
+            margin-top: 20px;
             vertical-align: middle;
             width: 100%;
             border-radius: 10px;
+            box-shadow: 7px 9px 9px 0px #050e1a;
           }
 
         
