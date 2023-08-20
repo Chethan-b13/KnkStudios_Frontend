@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import Card from '../Card'
 import image1 from "../../../Assets/hiphop1.jpg";
 import TopReels from '../TopReels'
+import Tabs from '../Gallery/Tabs'
 
 const Profile = () => {
     
@@ -62,7 +63,8 @@ const Profile = () => {
             <Card dstyle="Romance" img={image1} width="9rem" height="7rem"/>
             <Card dstyle="Ricker" img={image1} width="9rem" height="7rem" />
         </div>
-        <TopReels />
+        {/* <TopReels /> */}
+        <Tabs />
         </>
     )
 }

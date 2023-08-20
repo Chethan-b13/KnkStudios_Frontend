@@ -36,6 +36,9 @@ const Footer = () => {
             <li>
               <Link to={"/"}>Contact</Link>
             </li>
+            <li>
+              <Link to={"/gallery"}>Gallery</Link>
+            </li>
           </ul>
         </div>
         <div className="flex-col cwhite col2">

@@ -50,7 +50,15 @@ const Tabs = () => {
     }, [])
     
 
-    
+    const handlePlay = (e)=>{
+        const video = e.target;
+        if (video.paused) {
+            video.play();
+          }
+        else if (!video.paused) {
+            video.pause();
+          }
+    }
 
     return (
         <>
@@ -96,9 +104,7 @@ const Tabs = () => {
                                     videos.map((url,idx)=>{
                                         return(
                                             <video key={idx} 
-                                                onMouseOver={event => event.target.play()}
-                                                onMouseOut={event => event.target.pause()}
-                                                muted
+                                                onClick={handlePlay}
                                             >
                                                 <source src={url} type="video/mp4" />
                                             </video>
