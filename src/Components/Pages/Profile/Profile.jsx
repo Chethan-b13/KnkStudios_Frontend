@@ -7,6 +7,10 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Card from '../Card'
 import image1 from "../../../Assets/hiphop1.jpg";
+import image2 from "../../../Assets/bboying.jpg";
+import image3 from "../../../Assets/freeStyle.jpg";
+import image4 from "../../../Assets/gymnast.jpg";
+import image5 from "../../../Assets/popping.jpg";
 import TopReels from '../TopReels'
 import Tabs from '../Gallery/Tabs'
 
@@ -58,10 +62,10 @@ const Profile = () => {
             </div>
         </div>
         <div className="danceStyle">
-            <Card dstyle="BBowing" img={image1} width="9rem" height="7rem" />
-            <Card dstyle="Free Style" img={image1} width="9rem" height="7rem"/>
-            <Card dstyle="Romance" img={image1} width="9rem" height="7rem"/>
-            <Card dstyle="Ricker" img={image1} width="9rem" height="7rem" />
+            <Card dstyle="BBowing" img={image2} width="9rem" height="7rem" />
+            <Card dstyle="Free Style" img={image3} width="9rem" height="7rem"/>
+            <Card dstyle="Romance" img={image5} width="9rem" height="7rem"/>
+            <Card dstyle="Ricker" img={image4} width="9rem" height="7rem" />
         </div>
         {/* <TopReels /> */}
         <Tabs />
